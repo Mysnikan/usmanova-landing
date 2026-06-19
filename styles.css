@@ -642,7 +642,7 @@ a {
     justify-content: flex-start;
     gap: 0;
     margin: 1rem;
-    padding: clamp(1rem, 2.8vw, 1.5rem);
+    padding: clamp(1rem, 2.8vw, 1.5rem) clamp(1rem, 2.8vw, 1.5rem) clamp(2rem, 5vw, 3.5rem);
     border-radius: 0.9rem;
     overflow: hidden;
     background: #ffffff;
@@ -689,7 +689,7 @@ a {
 
   .hero__media img {
     width: min(100%, 31rem);
-    max-height: 62svh;
+    max-height: 53svh;
     margin: 0 auto;
     object-fit: contain;
   }
@@ -759,7 +759,7 @@ a {
     justify-content: flex-start;
     gap: 0;
     margin: 1rem;
-    padding: 0.7rem 0.75rem 0.75rem;
+    padding: 0.7rem 0.75rem 1.5rem;
     border-radius: 0.9rem;
     overflow: hidden;
     background: #ffffff;
@@ -806,7 +806,7 @@ a {
 
   .hero__media img {
     width: min(100%, 25rem);
-    max-height: 66svh;
+    max-height: 61svh;
     object-fit: contain;
   }
 
