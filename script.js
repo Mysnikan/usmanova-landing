@@ -100,6 +100,22 @@ if (motionAllowed) {
   });
 }
 
+const buildPopup = document.querySelector('[data-build-popup]');
+const buildPopupClose = document.querySelector('[data-build-popup-close]');
+
+if (buildPopup && buildPopupClose) {
+  buildPopup.hidden = false;
+
+  const closeBuildPopup = () => {
+    buildPopup.classList.add('is-closing');
+    window.setTimeout(() => {
+      buildPopup.hidden = true;
+    }, 220);
+  };
+
+  buildPopupClose.addEventListener('click', closeBuildPopup);
+}
+
 document.querySelectorAll('.faq-item__button').forEach((button) => {
   button.addEventListener('click', () => {
     const item = button.closest('.faq-item');

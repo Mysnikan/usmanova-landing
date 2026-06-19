@@ -452,6 +452,72 @@ a {
   box-shadow: 0 0.6rem 1.5rem rgba(63, 43, 55, 0.08);
 }
 
+.build-popup {
+  position: fixed;
+  right: clamp(1rem, 3vw, 2rem);
+  bottom: clamp(1rem, 3vw, 2rem);
+  z-index: 20;
+  max-width: min(24rem, calc(100vw - 2rem));
+}
+
+.build-popup__content {
+  position: relative;
+  padding: 1rem 3rem 1rem 1.1rem;
+  border-radius: 1rem;
+  background: #ffffff;
+  color: var(--ink);
+  box-shadow: 0 1.4rem 3rem rgba(63, 43, 55, 0.16);
+  animation: popupIn 420ms ease both;
+}
+
+.build-popup__content p {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.build-popup__close {
+  position: absolute;
+  top: 0.55rem;
+  right: 0.65rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.8rem;
+  height: 1.8rem;
+  border: 0;
+  border-radius: 999rem;
+  background: var(--pink-soft);
+  color: var(--pink);
+  cursor: pointer;
+  font: inherit;
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+.build-popup.is-closing .build-popup__content {
+  animation: popupOut 220ms ease both;
+}
+
+@keyframes popupIn {
+  from {
+    opacity: 0;
+    transform: translateY(0.8rem) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes popupOut {
+  to {
+    opacity: 0;
+    transform: translateY(0.4rem) scale(0.98);
+  }
+}
+
 .program-page {
   position: relative;
   min-height: 100vh;
