@@ -64,8 +64,6 @@ const programs = {
   },
 };
 
-document.body.classList.remove('is-loading');
-
 const motionAllowed = !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 if (motionAllowed) {

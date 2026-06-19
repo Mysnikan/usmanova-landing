@@ -42,14 +42,14 @@ a {
 }
 
 .hero {
-  min-height: 39rem;
+  min-height: 45rem;
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(20rem, 34rem);
   gap: clamp(1.5rem, 4vw, 5rem);
   align-items: center;
   max-width: 82rem;
   margin: 0 auto;
-  padding: clamp(3rem, 6vw, 5.5rem) clamp(1.25rem, 4vw, 3rem) clamp(4rem, 6vw, 5rem);
+  padding: clamp(6rem, 12vw, 11rem) clamp(1.25rem, 4vw, 3rem) clamp(8rem, 12vw, 10rem);
   background: #ffffff;
   box-shadow: 0 0 0 100vmax #ffffff;
   clip-path: inset(0 -100vmax);
@@ -81,6 +81,7 @@ a {
   font-size: clamp(1.9rem, 2.55vw, 2.65rem);
   font-weight: 500;
   text-transform: uppercase;
+  animation: heroTitleIn 720ms ease both;
 }
 
 .hero__title-line {
@@ -130,13 +131,16 @@ a {
   margin-left: auto;
 }
 
-.is-loading .hero h1 {
-  opacity: 0;
-  transform: translateY(0.9rem);
-}
+@keyframes heroTitleIn {
+  from {
+    opacity: 0;
+    transform: translateY(0.9rem);
+  }
 
-.hero h1 {
-  transition: opacity 520ms ease, transform 520ms ease;
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .button {
@@ -175,7 +179,7 @@ a {
 .faq {
   max-width: 82rem;
   margin: 0 auto;
-  padding: 5rem clamp(1.25rem, 4vw, 3rem);
+  padding: 10rem clamp(1.25rem, 4vw, 3rem);
 }
 
 .section-heading {
@@ -191,7 +195,7 @@ a {
 }
 
 .program-group + .program-group {
-  margin-top: 5rem;
+  margin-top: 10rem;
 }
 
 .program-group h3 {
@@ -303,7 +307,7 @@ a {
 }
 
 .faq {
-  padding-top: 4rem;
+  padding-top: 8rem;
 }
 
 .faq__list {
@@ -385,7 +389,7 @@ a {
 }
 
 .footer {
-  padding: 3rem clamp(1.25rem, 4vw, 3rem) 4rem;
+  padding: 6rem clamp(1.25rem, 4vw, 3rem) 8rem;
 }
 
 .footer__inner {
@@ -546,6 +550,25 @@ a {
 }
 
 @media (max-width: 61.9375rem) {
+  .programs,
+  .faq {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+
+  .program-group + .program-group {
+    margin-top: 6rem;
+  }
+
+  .faq {
+    padding-top: 5rem;
+  }
+
+  .footer {
+    padding-top: 4rem;
+    padding-bottom: 5rem;
+  }
+
   .hero {
     min-height: calc(100svh - 2rem);
     display: flex;
@@ -805,7 +828,6 @@ a {
     animation-iteration-count: 1 !important;
   }
 
-  .is-loading .hero h1,
   .program-card.reveal-on-scroll {
     opacity: 1;
     transform: none;
