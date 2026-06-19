@@ -466,7 +466,7 @@ a {
   border-radius: 1rem;
   background: #ffffff;
   color: var(--ink);
-  box-shadow: 0 1.4rem 3rem rgba(63, 43, 55, 0.16);
+  box-shadow: 0 1.4rem 3rem rgba(63, 43, 55, 0.16), 0 0 0 0.125rem var(--pink);
   animation: popupIn 420ms ease both;
 }
 
