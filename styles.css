@@ -175,6 +175,152 @@ a {
   font-size: 0.82rem;
 }
 
+.trust {
+  max-width: 82rem;
+  margin: 0 auto;
+  padding: 10rem clamp(1.25rem, 4vw, 3rem) 0;
+}
+
+.trust__intro {
+  max-width: 48rem;
+  margin: 0 auto 2.25rem;
+  text-align: center;
+}
+
+.trust__intro h2 {
+  margin: 0;
+  color: var(--ink);
+  font-size: clamp(1.8rem, 3vw, 2.65rem);
+  font-weight: 400;
+  line-height: 1.18;
+}
+
+.trust__intro h2 span {
+  color: var(--pink);
+  white-space: nowrap;
+}
+
+.trust__intro p {
+  max-width: 42rem;
+  margin: 1.6rem auto 0;
+  font-size: clamp(1rem, 1.45vw, 1.2rem);
+  line-height: 1.35;
+}
+
+.trust__card {
+  max-width: 42rem;
+  margin: 0 auto;
+  padding: clamp(1rem, 2vw, 1.5rem);
+  border-radius: 1.5rem;
+  background: #ffffff;
+  box-shadow: var(--shadow);
+}
+
+.trust__facts {
+  display: grid;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.trust__facts li {
+  position: relative;
+  min-height: 1.6rem;
+  padding-left: 2.5rem;
+  color: var(--muted);
+  font-size: clamp(0.95rem, 1.25vw, 1.08rem);
+  line-height: 1.45;
+}
+
+.trust__facts li::before {
+  content: "";
+  position: absolute;
+  top: 0.15rem;
+  left: 0;
+  width: 1.45rem;
+  height: 1.45rem;
+  background: var(--pink);
+  border-radius: 0.28rem;
+  transform: rotate(45deg);
+  opacity: 0.9;
+}
+
+.trust__facts li::after {
+  content: "";
+  position: absolute;
+  top: 0.55rem;
+  left: 0.4rem;
+  width: 0.65rem;
+  height: 0.2rem;
+  border-radius: 999rem;
+  background: #ffffff;
+  box-shadow: 0 0.42rem 0 #ffffff;
+  transform: rotate(45deg);
+}
+
+.trust-slider {
+  margin-top: 1.6rem;
+}
+
+.trust-slider__viewport {
+  overflow: hidden;
+  border-radius: 1.25rem;
+}
+
+.trust-slider__track {
+  display: flex;
+  transition: transform 380ms ease;
+  will-change: transform;
+}
+
+.trust-slide {
+  flex: 0 0 100%;
+  margin: 0;
+  background: var(--page);
+}
+
+.trust-slide img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  object-position: center;
+}
+
+.trust-slider__controls {
+  display: grid;
+  grid-template-columns: 2.4rem 1fr 2.4rem;
+  gap: 0.8rem;
+  align-items: center;
+  margin-top: 1rem;
+  color: var(--pink);
+  font-size: 0.86rem;
+  text-align: center;
+}
+
+.trust-slider__controls button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.4rem;
+  height: 2.4rem;
+  border: 0;
+  border-radius: 999rem;
+  background: var(--pink-soft);
+  color: var(--pink);
+  cursor: pointer;
+  font: inherit;
+  font-size: 1.4rem;
+  line-height: 1;
+  transition: background-color 180ms ease, transform 180ms ease;
+}
+
+.trust-slider__controls button:hover,
+.trust-slider__controls button:focus-visible {
+  background: #ffd2e3;
+  transform: translateY(-0.08rem);
+}
+
 .programs,
 .faq {
   max-width: 82rem;
@@ -616,6 +762,18 @@ a {
 }
 
 @media (max-width: 61.9375rem) {
+  .trust {
+    padding-top: 6rem;
+  }
+
+  .trust__card {
+    max-width: 38rem;
+  }
+
+  .trust-slide img {
+    aspect-ratio: 1 / 1;
+  }
+
   .programs,
   .faq {
     padding-top: 6rem;
@@ -745,6 +903,12 @@ a {
   .footer__column--links a:focus-visible {
     color: inherit;
   }
+
+  .trust-slider__controls button:hover,
+  .trust-slider__controls button:focus-visible {
+    background: var(--pink-soft);
+    transform: none;
+  }
 }
 
 @media (max-width: 42rem) {
@@ -836,6 +1000,56 @@ a {
     min-height: 3.15rem;
     font-size: 0.78rem;
     letter-spacing: 0.08em;
+  }
+
+  .trust {
+    padding-top: 5rem;
+  }
+
+  .trust__intro {
+    margin-bottom: 1.5rem;
+  }
+
+  .trust__intro h2 {
+    font-size: clamp(1.45rem, 7vw, 2rem);
+  }
+
+  .trust__intro h2 span {
+    white-space: normal;
+  }
+
+  .trust__intro p {
+    margin-top: 1rem;
+    font-size: 0.95rem;
+  }
+
+  .trust__card {
+    padding: 1rem;
+    border-radius: 1.25rem;
+  }
+
+  .trust__facts {
+    gap: 0.85rem;
+  }
+
+  .trust__facts li {
+    padding-left: 2.1rem;
+    font-size: 0.9rem;
+  }
+
+  .trust__facts li::before {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+
+  .trust__facts li::after {
+    top: 0.48rem;
+    left: 0.33rem;
+  }
+
+  .trust-slider__controls {
+    grid-template-columns: 2.2rem 1fr 2.2rem;
+    gap: 0.5rem;
   }
 
   .program-card {
