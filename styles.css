@@ -747,11 +747,11 @@ a {
 
 @media (max-width: 61.9375rem) {
   .trust {
-    padding-top: 6rem;
+    padding: 6rem 1rem 0;
   }
 
   .trust__card {
-    max-width: 38rem;
+    max-width: 42rem;
   }
 
   .trust-slide img {
@@ -760,8 +760,7 @@ a {
 
   .programs,
   .faq {
-    padding-top: 6rem;
-    padding-bottom: 6rem;
+    padding: 6rem 1rem;
   }
 
   .program-group + .program-group {
@@ -773,17 +772,17 @@ a {
   }
 
   .footer {
-    padding-top: 4rem;
-    padding-bottom: 5rem;
+    padding: 4rem 1rem 5rem;
   }
 
   .hero {
     min-height: calc(100svh - 2rem);
+    max-width: 42rem;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     gap: 0;
-    margin: 1rem;
+    margin: 1rem auto;
     padding: clamp(1rem, 2.8vw, 1.5rem) clamp(1rem, 2.8vw, 1.5rem) clamp(2rem, 5vw, 3.5rem);
     border-radius: 0.9rem;
     overflow: hidden;
