@@ -119,52 +119,9 @@ if (buildPopup && buildPopupClose) {
 const trustSlider = document.querySelector('[data-trust-slider]');
 
 if (trustSlider) {
-  const track = trustSlider.querySelector('[data-trust-track]');
-  const slides = [...trustSlider.querySelectorAll('.trust-slide')];
-  const prevButton = trustSlider.querySelector('[data-trust-prev]');
-  const nextButton = trustSlider.querySelector('[data-trust-next]');
-  let currentSlide = 0;
-  let pointerStart = null;
-
-  const updateTrustSlider = () => {
-    track.style.transform = `translateX(-${currentSlide * 100}%)`;
-
-    slides.forEach((slide, index) => {
-      slide.classList.toggle('is-active', index === currentSlide);
-      slide.setAttribute('aria-hidden', String(index !== currentSlide));
-    });
-  };
-
-  const goToTrustSlide = (direction) => {
-    currentSlide = (currentSlide + direction + slides.length) % slides.length;
-    updateTrustSlider();
-  };
-
-  prevButton.addEventListener('click', () => goToTrustSlide(-1));
-  nextButton.addEventListener('click', () => goToTrustSlide(1));
-
-  track.addEventListener('pointerdown', (event) => {
-    pointerStart = event.clientX;
+  trustSlider.querySelectorAll('.trust-slide').forEach((slide) => {
+    slide.removeAttribute('aria-hidden');
   });
-
-  track.addEventListener('pointerup', (event) => {
-    if (pointerStart === null) {
-      return;
-    }
-
-    const delta = event.clientX - pointerStart;
-    pointerStart = null;
-
-    if (Math.abs(delta) > 40) {
-      goToTrustSlide(delta < 0 ? 1 : -1);
-    }
-  });
-
-  track.addEventListener('pointercancel', () => {
-    pointerStart = null;
-  });
-
-  updateTrustSlider();
 }
 
 document.querySelectorAll('.faq-item__button').forEach((button) => {

@@ -248,61 +248,49 @@ a {
 }
 
 .trust-slider__viewport {
-  overflow: hidden;
+  overflow-x: auto;
+  overflow-y: hidden;
   border-radius: 1.25rem;
+  scroll-snap-type: x mandatory;
+  scrollbar-color: var(--pink) var(--pink-soft);
+  scrollbar-width: thin;
+  -webkit-overflow-scrolling: touch;
 }
 
 .trust-slider__track {
   display: flex;
-  transition: transform 380ms ease;
-  will-change: transform;
+  gap: 1rem;
+  padding-bottom: 1rem;
 }
 
 .trust-slide {
-  flex: 0 0 100%;
+  flex: 0 0 calc((100% - 1rem) / 1.5);
   margin: 0;
   background: var(--page);
+  border-radius: 1.1rem;
+  overflow: hidden;
+  scroll-snap-align: start;
 }
 
 .trust-slide img {
   width: 100%;
-  aspect-ratio: 16 / 10;
+  aspect-ratio: 1 / 1;
   object-fit: cover;
   object-position: center;
 }
 
-.trust-slider__controls {
-  display: grid;
-  grid-template-columns: 2.4rem 1fr 2.4rem;
-  gap: 0.8rem;
-  align-items: center;
-  margin-top: 1rem;
-  color: var(--pink);
-  font-size: 0.86rem;
-  text-align: center;
+.trust-slider__viewport::-webkit-scrollbar {
+  height: 0.45rem;
 }
 
-.trust-slider__controls button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 2.4rem;
-  height: 2.4rem;
-  border: 0;
+.trust-slider__viewport::-webkit-scrollbar-track {
   border-radius: 999rem;
   background: var(--pink-soft);
-  color: var(--pink);
-  cursor: pointer;
-  font: inherit;
-  font-size: 1.4rem;
-  line-height: 1;
-  transition: background-color 180ms ease, transform 180ms ease;
 }
 
-.trust-slider__controls button:hover,
-.trust-slider__controls button:focus-visible {
-  background: #ffd2e3;
-  transform: translateY(-0.08rem);
+.trust-slider__viewport::-webkit-scrollbar-thumb {
+  border-radius: 999rem;
+  background: var(--pink);
 }
 
 .programs,
@@ -888,11 +876,6 @@ a {
     color: inherit;
   }
 
-  .trust-slider__controls button:hover,
-  .trust-slider__controls button:focus-visible {
-    background: var(--pink-soft);
-    transform: none;
-  }
 }
 
 @media (max-width: 42rem) {
@@ -1024,11 +1007,6 @@ a {
   .trust__facts li::before {
     width: 1.35rem;
     height: 1.35rem;
-  }
-
-  .trust-slider__controls {
-    grid-template-columns: 2.2rem 1fr 2.2rem;
-    gap: 0.5rem;
   }
 
   .program-card {
