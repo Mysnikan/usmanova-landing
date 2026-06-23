@@ -713,7 +713,7 @@ a {
   object-position: top center;
 }
 
-@media (max-width: 64rem) {
+@media (max-width: 61.9375rem) {
   .hero {
     min-height: auto;
     grid-template-columns: 1fr;
