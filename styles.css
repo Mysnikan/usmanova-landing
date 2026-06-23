@@ -236,27 +236,11 @@ a {
 .trust__facts li::before {
   content: "";
   position: absolute;
-  top: 0.15rem;
+  top: 0.05rem;
   left: 0;
-  width: 1.45rem;
-  height: 1.45rem;
-  background: var(--pink);
-  border-radius: 0.28rem;
-  transform: rotate(45deg);
-  opacity: 0.9;
-}
-
-.trust__facts li::after {
-  content: "";
-  position: absolute;
-  top: 0.55rem;
-  left: 0.4rem;
-  width: 0.65rem;
-  height: 0.2rem;
-  border-radius: 999rem;
-  background: #ffffff;
-  box-shadow: 0 0.42rem 0 #ffffff;
-  transform: rotate(45deg);
+  width: 1.65rem;
+  height: 1.65rem;
+  background: url("assets/dumbbell-bullet.png") center / contain no-repeat;
 }
 
 .trust-slider {
@@ -1038,13 +1022,8 @@ a {
   }
 
   .trust__facts li::before {
-    width: 1.25rem;
-    height: 1.25rem;
-  }
-
-  .trust__facts li::after {
-    top: 0.48rem;
-    left: 0.33rem;
+    width: 1.35rem;
+    height: 1.35rem;
   }
 
   .trust-slider__controls {
