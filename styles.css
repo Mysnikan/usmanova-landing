@@ -240,7 +240,7 @@ a {
   left: 0;
   width: 1.65rem;
   height: 1.65rem;
-  background: url("assets/dumbbell-bullet.png") center / contain no-repeat;
+  background: url("assets/dumbbell-bullet.webp") center / contain no-repeat;
 }
 
 .trust-slider {
